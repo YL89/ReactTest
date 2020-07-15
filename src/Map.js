@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './map.css'
@@ -7,7 +7,9 @@ export default class Map extends React.Component{
 
 
     componentDidMount(){
-        this.map = L.map('map').setView([43.717899, -79.6582408], 13);
+        this.map = L.map('map',{
+            zoomControl: false
+        }).setView([43.717899, -79.6582408], 13);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
